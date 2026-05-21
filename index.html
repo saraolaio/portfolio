@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Brand Consultant & Events Manager</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --dark: #1A1714;
+      --warm-brown: #4A3728;
+      --gold: #C9A84C;
+      --gold-light: #E8D08A;
+      --muted: #8A7E74;
+      --white: #FDFAF5;
+      --section-pad: 100px 60px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--dark);
+      color: var(--cream);
+      font-family: 'Raleway', sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.03em;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 60px;
+      background: linear-gradient(to bottom, rgba(26,23,20,0.95), transparent);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--cream);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.75;
+      transition: opacity 0.3s, color 0.3s;
+    }
+
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+    /* ── HERO / INTRO ── */
+    #intro {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 60px;
+      gap: 80px;
+      position: relative;
+    }
+
+    #intro::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .intro-text { padding-top: 80px; }
+
+    .intro-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      padding: 6px 16px;
+      margin-bottom: 28px;
+    }
+
+    .intro-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .intro-text h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .intro-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .intro-bio {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: rgba(245,240,232,0.8);
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 14px 36px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover { background: var(--gold); color: var(--dark); }
+
+    .intro-image-wrap {
+      position: relative;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+    }
+
+    .intro-image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      margin-left: auto;
+    }
+
+    .intro-image-frame::before {
+      content: '';
+      position: absolute;
+      top: 24px; right: -24px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--gold);
+      opacity: 0.4;
+    }
+
+    .intro-image-frame .placeholder-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #2E2620 0%, #3A2E26 50%, #2A2018 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    .placeholder-img svg { opacity: 0.35; }
+
+    /* ── SECTION SHARED ── */
+    section { padding: var(--section-pad); }
+
+    .section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 60px;
+    }
+
+    .section-title em { font-style: italic; color: var(--gold); }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 60px;
+    }
+
+    /* ── WORK EXPERIENCE ── */
+    #experience {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .experience-grid { display: flex; flex-direction: column; gap: 56px; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(245,240,232,0.08);
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .exp-meta { padding-top: 4px; }
+
+    .exp-years {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .exp-company {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .exp-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--cream);
+    }
+
+    .exp-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(245,240,232,0.7);
+      margin-bottom: 20px;
+    }
+
+    .exp-tasks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .exp-tasks li {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(245,240,232,0.65);
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .exp-tasks li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.8rem;
+    }
+
+    /* ── BODY OF WORK ── */
+    #work { background: #141210; }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .work-item {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .work-item .placeholder-img {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1E1A16 0%, #2A2318 50%, #1A160F 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.6s ease;
+    }
+
+    .work-item:nth-child(2) .placeholder-img { background: linear-gradient(135deg, #1A1E16 0%, #232A18 100%); }
+    .work-item:nth-child(3) .placeholder-img { background: linear-gradient(135deg, #1A1A1E 0%, #232328 100%); }
+    .work-item:nth-child(4) .placeholder-img { background: linear-gradient(135deg, #1E1616 0%, #2A1818 100%); }
+    .work-item:nth-child(5) .placeholder-img { background: linear-gradient(135deg, #1E1A14 0%, #2E2818 100%); }
+    .work-item:nth-child(6) .placeholder-img { background: linear-gradient(135deg, #161E1A 0%, #18281E 100%); }
+
+    .work-item:hover .placeholder-img { transform: scale(1.06); }
+
+    .work-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,23,20,0.95) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+
+    .work-item:hover .work-overlay { opacity: 1; }
+
+    .work-year {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .work-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .work-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* ── ACHIEVEMENTS ── */
+    #achievements {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .achievement-item {
+      padding: 40px 48px;
+      border: 1px solid rgba(245,240,232,0.07);
+      display: flex;
+      align-items: flex-start;
+      gap: 28px;
+      transition: background 0.3s;
+    }
+
+    .achievement-item:hover { background: rgba(201,168,76,0.04); }
+
+    .ach-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: rgba(201,168,76,0.25);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 56px;
+      text-align: right;
+    }
+
+    .ach-content {}
+
+    .ach-date {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .ach-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .ach-body {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: #141210;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .testimonial-card {
+      background: rgba(245,240,232,0.03);
+      border: 1px solid rgba(245,240,232,0.08);
+      padding: 40px 36px;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .testimonial-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-4px);
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: 20px; right: 28px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      opacity: 0.2;
+      line-height: 1;
+    }
+
+    .testimonial-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(245,240,232,0.85);
+      margin-bottom: 32px;
+    }
+
+    .testimonial-person {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .person-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2E2620 0%, #3A2E26 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(201,168,76,0.3);
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .person-name {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .person-role {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 60px;
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+    }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    #intro .intro-text { animation: fadeUp 0.9s 0.2s ease both; }
+    #intro .intro-image-wrap { animation: fadeUp 0.9s 0.4s ease both; }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); opacity: 0.5; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">Sara Olaio</span>
+  <ul class="nav-links">
+    <li><a href="#intro">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+  </ul>
+</nav>
+
+
+<!-- ══ INTRO ══ -->
+<section id="intro">
+  <div class="intro-text">
+    <span class="intro-tag">Brand Consultant · Events Manager</span>
+    <h1>Crafting <em>Stories</em><br>That Move People</h1>
+    <p class="intro-subtitle">Madrid · New York · London</p>
+    <p class="intro-bio">
+      With over a decade at the intersection of brand strategy and live experience design, I help ambitious companies and cultural institutions articulate who they are — and turn that identity into moments people never forget. From intimate brand repositioning to large-scale international events, every project begins with a single question: what do you want people to <em>feel</em>?
+    </p>
+    <a class="btn-outline" href="#work">View Portfolio</a>
+  </div>
+
+  <div class="intro-image-wrap">
+    <div class="intro-image-frame">
+      <div class="placeholder-img">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <span>Profile Photo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ WORK EXPERIENCE ══ -->
+<section id="experience">
+  <p class="section-label">Career</p>
+  <h2 class="section-title">Work <em>Experience</em></h2>
+
+  <div class="experience-grid">
+
+    <!-- JOB 1 -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-years">2019 — Present</p>
+        <p class="exp-company">Meridian Brand Studio</p>
+      </div>
+      <div>
+        <h3 class="exp-title">Senior Brand Strategist &amp; Creative Director</h3>
+        <p class="exp-desc">Leading brand architecture and campaign strategy for a portfolio of luxury, fashion, and cultural clients across Europe and North America. Overseeing a team of six creatives while maintaining hands-on involvement in key client relationships.</p>
+        <ul class="exp-tasks">
+          <li>Developed end-to-end brand identities for seven clients, including full visual systems, tone-of-voice guidelines, and launch strategies, resulting in an average 40% increase in brand awareness within the first year.</li>
+          <li>Directed the creative concept and on-site production of four major brand-launch events (250–1,200 attendees), managing vendor negotiations, talent bookings, and live storytelling elements.</li>
+          <li>Partnered with C-suite stakeholders to conduct brand audits and competitive landscape analyses, translating insights into actionable repositioning roadmaps.</li>
+          <li>Mentored junior strategists and designers, establishing internal processes that reduced project turnaround time by 25%.</li>
+          <li>Managed an annual creative production budget of €2.4M, consistently delivering projects on time and within scope.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JOB 2 -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-years">2015 — 2019</p>
+        <p class="exp-company">Elevate Events Group</p>
+      </div>
+      <div>
+        <h3 class="exp-title">Events Manager &amp; Brand Partnerships Lead</h3>
+        <p class="exp-desc">Responsible for planning and executing brand-sponsored events, product launches, and corporate experiences for a client roster spanning retail, hospitality, and the arts sector.</p>
+        <ul class="exp-tasks">
+          <li>Produced over 60 events across five countries, ranging from intimate press previews to flagship consumer activations with audiences exceeding 3,000 people.</li>
+          <li>Negotiated and managed brand partnership agreements totalling €1.8M in combined sponsorship value, exceeding annual targets by 32%.</li>
+          <li>Collaborated with marketing and PR teams to align event programming with broader campaign narratives, ensuring consistent brand storytelling across all touchpoints.</li>
+          <li>Introduced a post-event debrief framework that became standard agency practice, improving client satisfaction scores from 7.2 to 9.1 out of 10.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- JOB 3 -->
+    <div class="exp-item">
+      <div class="exp-meta">
+        <p class="exp-years">2012 — 2015</p>
+        <p class="exp-company">Huxley &amp; Partners</p>
+      </div>
+      <div>
+        <h3 class="exp-title">Junior Brand Consultant</h3>
+        <p class="exp-desc">Supported senior strategists on brand research, consumer insight projects, and campaign execution for a range of FMCG and lifestyle clients.</p>
+        <ul class="exp-tasks">
+          <li>Conducted qualitative and quantitative brand research, synthesising findings into clear client presentations and strategic recommendations.</li>
+          <li>Assisted in the production of three national product launch campaigns, coordinating with media agencies, photographers, and copywriters.</li>
+          <li>Built and maintained competitive tracking reports across six client categories, used as quarterly strategic reference by senior leadership.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ BODY OF WORK ══ -->
+<section id="work" style="padding: 100px 0;">
+  <div style="padding: 0 60px 60px;">
+    <p class="section-label">Selected Projects</p>
+    <h2 class="section-title">Body of <em>Work</em></h2>
+  </div>
+
+  <div class="work-grid">
+
+    <div class="work-item">
+      <div class="placeholder-img">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div class="work-overlay">
+        <p class="work-year">2024</p>
+        <p class="work-name">Maison Céleste Rebranding</p>
+        <p class="work-tag">Brand Identity · Luxury Fashion</p>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="placeholder-img">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l4 4"/></svg>
+      </div>
+      <div class="work-overlay">
+        <p class="work-year">2024</p>
+        <p class="work-name">Solstice Summit — Barcelona</p>
+        <p class="work-tag">Event Production · 1,200 Guests</p>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="placeholder-img">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="work-overlay">
+        <p class="work-year">2023</p>
+        <p class="work-name">Vireo Labs Brand Launch</p>
+        <p class="work-tag">Strategy · Visual Identity · Launch</p>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="placeholder-img">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="work-overlay">
+        <p class="work-year">2023</p>
+        <p class="work-name">Nomad Hotels — Global Rollout</p>
+        <p class="work-tag">Brand Architecture · Multi-market</p>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="placeholder-img">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="work-overlay">
+        <p class="work-year">2022</p>
+        <p class="work-name">Lumière Arts Gala</p>
+        <p class="work-tag">Event Design · Cultural Institution</p>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <div class="placeholder-img">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      </div>
+      <div class="work-overlay">
+        <p class="work-year">2022</p>
+        <p class="work-name">Forma Studio Positioning</p>
+        <p class="work-tag">Brand Consultancy · Architecture Firm</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ ACHIEVEMENTS ══ -->
+<section id="achievements">
+  <p class="section-label">Recognition</p>
+  <h2 class="section-title">Awards &amp; <em>Achievements</em></h2>
+
+  <div class="achievements-grid">
+
+    <div class="achievement-item">
+      <span class="ach-number">01</span>
+      <div class="ach-content">
+        <p class="ach-date">November 2024</p>
+        <h4 class="ach-title">Brand Strategist of the Year</h4>
+        <p class="ach-body">European Brand Excellence Awards — Recognised for outstanding contribution to luxury brand repositioning and cross-market campaign strategy.</p>
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <span class="ach-number">02</span>
+      <div class="ach-content">
+        <p class="ach-date">June 2024</p>
+        <h4 class="ach-title">Best Experiential Campaign — Gold</h4>
+        <p class="ach-body">Cannes Lions Experiential & Immersive — Awarded for the Solstice Summit brand activation developed for Maison Céleste.</p>
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <span class="ach-number">03</span>
+      <div class="ach-content">
+        <p class="ach-date">March 2023</p>
+        <h4 class="ach-title">Forbes 30 Under 40 — Creative Industries</h4>
+        <p class="ach-body">Featured in Forbes Europe's annual list celebrating emerging leaders reshaping the creative and brand consulting landscape.</p>
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <span class="ach-number">04</span>
+      <div class="ach-content">
+        <p class="ach-date">October 2022</p>
+        <h4 class="ach-title">Event Professional of the Year</h4>
+        <p class="ach-body">SITE (Society for Incentive Travel Excellence) — Honoured for the Lumière Arts Gala and for advancing standards in culturally led event programming.</p>
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <span class="ach-number">05</span>
+      <div class="ach-content">
+        <p class="ach-date">April 2021</p>
+        <h4 class="ach-title">Best Brand Identity — Newcomer</h4>
+        <p class="ach-body">Design Week Awards — Recognised for the Forma Studio brand system, praised by judges for its restraint, clarity, and spatial sensitivity.</p>
+      </div>
+    </div>
+
+    <div class="achievement-item">
+      <span class="ach-number">06</span>
+      <div class="ach-content">
+        <p class="ach-date">September 2018</p>
+        <h4 class="ach-title">Rising Star in Events Management</h4>
+        <p class="ach-body">C&IT (Conference &amp; Incentive Travel) — Cited for pioneering post-event measurement frameworks adopted across three major UK agencies.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ TESTIMONIALS ══ -->
+<section id="testimonials">
+  <p class="section-label">What Clients Say</p>
+  <h2 class="section-title">Testi<em>monials</em></h2>
+
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Sara doesn't just refresh a brand — she excavates its soul. The clarity she brought to our identity in three months was something we had been searching for over three years. The launch event was nothing short of extraordinary."</p>
+      <div class="testimonial-person">
+        <div class="person-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <p class="person-name">Isabelle Fontaine</p>
+          <p class="person-role">CEO, Maison Céleste</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">"Working with Sara was a revelation. She understands the mechanics of attention and transforms an event brief into something that feels genuinely alive. Our guests are still talking about the evening she designed for us."</p>
+      <div class="testimonial-person">
+        <div class="person-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <p class="person-name">Marcus Reinholt</p>
+          <p class="person-role">Director of Culture, Lumière Foundation</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <p class="testimonial-text">"What sets Sara apart is that she listens before she speaks — and when she does, every word counts. She gave our company a voice we didn't know we had, and a presence we're proud to stand behind every single day."</p>
+      <div class="testimonial-person">
+        <div class="person-avatar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div>
+          <p class="person-name">Priya Mehta</p>
+          <p class="person-role">Co-Founder, Vireo Labs</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-name">Sara Olaio</span>
+  <p class="footer-copy">© 2025 · All Rights Reserved</p>
+  <div class="footer-links">
+    <a href="#">LinkedIn</a>
+    <a href="#">Instagram</a>
+    <a href="#">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
