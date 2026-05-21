@@ -183,9 +183,10 @@
       text-transform: uppercase;
       position: relative;
       z-index: 1;
+       object-fit: cover;  
     }
 
-    .placeholder-img svg { opacity: 0.35; }
+    .placeholder-img svg { opacity: 0.35;  object-fit: cover;  }
 
     /* ── SECTION SHARED ── */
     section { padding: var(--section-pad); }
@@ -587,15 +588,11 @@
     <a class="btn-outline" href="#work">View Portfolio</a>
   </div>
 
+
   <div class="intro-image-wrap">
     <div class="intro-image-frame">
-      <div class="placeholder-img">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-        </svg>
-        <span>Profile Photo</span>
-      </div>
+      <img src="./assets/images/Cvphoto.png" class="placeholder-img"/>
+      
     </div>
   </div>
 </section>
