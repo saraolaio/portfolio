@@ -162,7 +162,7 @@
     padding-top:clamp(2.4rem,5vw,4rem);
     align-items:start;
   }
-  h2.about-title{font-size:clamp(2.2rem,4.6vw,4rem);max-width:12ch; grid-column: 1}
+  h2.about-title{font-size:clamp(2.2rem,4.6vw,4rem);}
   h2.about-title em{font-style:italic;}
   .about-media {grid-column: 1}
   .about-body{gap:1.4rem;max-width:56ch; grid-column: 2}
@@ -256,9 +256,14 @@
   @keyframes rise{to{opacity:1;transform:none;}}
 
   /* ---------- responsive ---------- */
+  @media (min-width:900px){
+   h2.about-title{max-width:12ch; }
+  }
+
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;align-items:start;}
     .hero-media{order:1;max-width:100%;}
+    .hero-intro{max-width:100%;}
     .about-media{max-width:300px;}
     .services{grid-template-columns:1fr 1fr;}
     .svc,.svc + .svc{border-left:none;border-top:1px solid var(--line-soft);padding-left:0;padding-top:1.6rem;}
@@ -329,8 +334,8 @@
         <span class="sec-num">01</span><span class="label">About me</span>
       </div>
       <div class="about-grid">
+        <h2 class="about-title reveal">A brand is a promise kept in every <em>detail.</em></h2>
         <div class="about-copy reveal">
-          <h2 class="about-title">A brand is a promise kept in every <em>detail.</em></h2>
           <div class="about-media reveal">
             <figure class="frame">
               <span class="fig">02</span>
