@@ -30,7 +30,7 @@
   #work {
     background-color: #100f0f;
     color: #111010;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
   }
   #work .label{ color: #949393; }
   #work h2, #work h3{ color: #ffffff; }
@@ -166,7 +166,7 @@
   h2.about-title em{font-style:italic;}
   .about-media {grid-column: 1}
   .about-body{gap:1.4rem;max-width:56ch; grid-column: 2}
-  .about-body p{color:#6a6664;font-size:1.02rem;line-height:1.68;}
+  .about-body p{color:#6a6664;font-size:1.02rem;line-height:1.68; margin-bottom: 10px;}
 
   .stats{
     display:grid;grid-template-columns:repeat(3,1fr);
@@ -185,7 +185,7 @@
   }
   .svc{padding:clamp(1.6rem,2.6vw,2.2rem) clamp(1.1rem,1.6vw,1.6rem) clamp(2rem,3vw,2.6rem) 0;}
   .svc + .svc{padding-left:clamp(1.1rem,1.6vw,1.6rem);border-left:1px solid var(--line-soft);}
-  .svc h3{font-size:1.28rem;margin:.9rem 0 1rem;letter-spacing:0;}
+  .svc h3{margin:.9rem 0 1rem;letter-spacing:0; font-weight: bold;}
   .svc p{font-size:.92rem;line-height:1.62;color:#6a6664;max-width:26ch;}
   .svc .idx{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);font-size:.9rem;}
 
@@ -200,22 +200,39 @@
   .work-intro p{max-width:38ch;color:var(--ink-soft);font-size:1.05rem;line-height:1.6;justify-self:end;}
 
   .works{
-    display:grid;grid-template-columns:repeat(3,1fr);
-    gap:clamp(1.6rem,3vw,3rem) clamp(1.6rem,3vw,2.6rem);
-    margin-top:clamp(3rem,6vw,5rem);
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:clamp(1.6rem,2vw,3rem) clamp(1.6rem,2vw,2.6rem);
+    margin-top:clamp(3rem,4vw,5rem);
   }
-  .work .frame{aspect-ratio:4/5;}
+  .work .frame{aspect-ratio:199/200;}
   .work-meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:1.2rem;gap:1rem;}
   .work-meta .cat{font-size:.66rem;}
   .work-meta .idx{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);}
   .work h3{font-size:1.55rem;margin-top:.5rem;letter-spacing:0;}
   .work p{margin-top:.7rem;font-size:.9rem;line-height:1.6;color:var(--ink-soft);max-width:34ch;}
 
+
+   /* ---------- testimonials ---------- */
+  #testimonials{padding-bottom:clamp(3rem,6vw,5rem);}
+
+   .testimonials{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:clamp(1.6rem,3vw,3rem) clamp(1.6rem,3vw,2.6rem);
+    margin-top:clamp(3rem,6vw,5rem);
+  }
+
+  .testimonials .frame{aspect-ratio:199/200;}
+  .testimonials-meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:1.2rem;gap:1rem;}
+  .testimonials-meta .cat{font-size:.66rem;}
+  .testimonials-meta .idx{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);}
+  .testimonials h3{font-size:1.55rem;margin-top:.5rem;letter-spacing:0;}
+  .testimonials p{margin-top:.7rem;font-size:.9rem;line-height:1.6;color:var(--ink-soft);max-width:34ch; text-align: justify;}
+
   /* ---------- contact ---------- */
-  .contact{padding-top:50px;padding-bottom:clamp(3rem,6vw,5rem);}
+  .contact{padding-top:50px;padding-bottom:clamp(3rem,6vw,5rem); background-color: #f3f3f3; color:#6a6664;}
   h2.contact-title{font-size:clamp(2.6rem,7.5vw,6.4rem);max-width:14ch;}
   h2.contact-title em{font-style:italic;}
-  .avail{max-width:40ch;margin-top:2rem;color:var(--ink-soft);font-size:1.05rem;line-height:1.6;}
+  .avail{max-width:40ch;margin-top:2rem;color:var(--ink-soft);font-size:1.05rem;line-height:1.6; color:#6a6664;}
   .email-line{margin-top:clamp(2.5rem,5vw,4rem);}
   a.big-email{
     font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,5vw,3.4rem);
@@ -313,7 +330,7 @@
           <h1 class="hero-title">
             <span class="ln">I make</span>
             <span class="ln">your brand</span>
-            <span class="ln">feel like <italic>luxury.</italic></span>
+            <span class="ln">feel like <em>luxury.</em></span>
           </h1>
           <p class="hero-intro">I'm Sara, a Brand Manager shaping positioning, campaigns, and creative direction across beauty, fashion, healthcare and entertainment. With 9+ years of developing a deep understanding of people's needs and desires.</p>
         </div>
@@ -343,15 +360,13 @@
             </figure>
           </div>
           <div class="about-body">
-            <p>Over the past decade I've worked across healthcare, MedTech, fashion, luxury, entertainment, and founder-led businesses, turning brand strategy into experiences that perform and hold their audience.
-
-My work spans the full brand cycle: strategy and identity, product positioning and launch, campaign development and copy, public relations and events, styling and creative direction. I operate closely with cross-functional teams and agencies, aligning specialists around a single objective and keeping execution consistent from concept to delivery.
-
-I'm results-driven without being reductive. I keep my focus on sales and performance while protecting the thing that makes a brand worth choosing in the first place: its authenticity.
-
-With experience across international markets, I work fluently in English, Spanish, and Portuguese.
-.</p>
-            <p>Most of my work is quiet: architecture, guidelines, rituals that survive the launch. The rest is loud — campaigns, collaborations, openings. I care about both, and about the people who have to run them once I leave the room.</p>
+            <p>My path into brand began in nursing, a background that taught me to understand people, build trust, and make decisions grounded in evidence. Curiosity drives how I work, adapting quickly, challenging conventions, and taking calculated risks when they create a stronger brand.</p>
+            <p>Over the past decade I've worked across healthcare, MedTech, fashion, luxury, entertainment, and founder-led businesses, turning brand strategy into experiences that perform and hold their audience.</p>
+            <p>My work spans the full brand cycle: strategy and identity, product positioning and launch, campaign development and copy, public relations and events, styling and creative direction. I operate closely with cross-functional teams and agencies, aligning specialists around a single objective and keeping execution consistent from concept to delivery.</p>
+            <p>As a results-driven professional, my focus relies on sales and performance while protecting the thing that makes a brand worth choosing in the first place: <b>its authenticity</b>.</p>
+            <p>Experienced across international markets. Fluent in English, Spanish, and Portuguese.</p>
+            
+            <p>Certified in Brand Management by University of London x London Business School.</p>
           </div>
         </div>
       </div>
@@ -363,10 +378,10 @@ With experience across international markets, I work fluently in English, Spanis
       </div>
 
       <div class="services reveal">
-        <div class="svc"><span class="idx">i</span><h3>Brand Strategy</h3><p>Positioning, architecture, portfolio decisions and the arguments that hold them up.</p></div>
-        <div class="svc"><span class="idx">ii</span><h3>Creative Direction</h3><p>Art direction partners, casting, campaign concepts, seasonal storytelling.</p></div>
-        <div class="svc"><span class="idx">iii</span><h3>Launch Management</h3><p>Go-to-market plans, retail and press moments, sequencing across markets.</p></div>
-        <div class="svc"><span class="idx">iv</span><h3>Brand Guardianship</h3><p>Guidelines, tone of voice, training and rituals that outlast the campaign.</p></div>
+        <div class="svc"><span class="idx">i</span><h3>Strategy & Identity</h3><p>Positioning, brand architecture and the strategic foundation beneath it, built to stay coherent from the first choice to the last touchpoint.</p></div>
+        <div class="svc"><span class="idx">ii</span><h3>Public Relations & Events</h3><p>Launches, press moments and events made to be felt in the room, turning an audience into a following that returns.</p></div>
+        <div class="svc"><span class="idx">iii</span><h3>Creative Direction</h3><p>Campaign concepts, art direction, casting and styling that give the strategy a face people want to look at.</p></div>
+        <div class="svc"><span class="idx">iv</span><h3>Branding</h3><p>Voice, story and presence that turn founders into authorities and brands into names people trust. </p></div>
       </div>
     </div>
   </section>
@@ -385,48 +400,67 @@ With experience across international markets, I work fluently in English, Spanis
       <div class="works">
         <article class="work reveal">
           <figure class="frame"><span class="fig">01</span><span class="cap label">Campaign film still</span></figure>
-          <div class="work-meta"><span class="cat label">Repositioning · 2025</span><span class="idx">01</span></div>
-          <h3>Maison Lévrier</h3>
-          <p>Repositioned a 1912 leather house for a younger client without discounting a single price point.</p>
+          <div class="work-meta"><span class="cat label">BRAND & MARKETING STRATEGY · [2022-2024]</span><span class="idx">01</span></div>
+          <h3>Coloplast - Ostomy Division</h3>
+          <p>Optimised the loyalty programme to a 25% lift in engagement, and raised event satisfaction to +15%.</p>
         </article>
 
         <article class="work reveal">
           <figure class="frame"><span class="fig">02</span><span class="cap label">Product still</span></figure>
-          <div class="work-meta"><span class="cat label">Fragrance Launch · 2024</span><span class="idx">02</span></div>
-          <h3>Noir de Sel</h3>
-          <p>Eleven markets, one story: a debut fragrance that sold through its first drop in nine days.</p>
+          <div class="work-meta"><span class="cat label">COMMUNITY & CONTENT CREATION · [2026]</span><span class="idx">02</span></div>
+          <h3>BadBClub</h3>
+          <p>Founded and ran a women-first events community end to end, built from zero into an active following.</p>
         </article>
 
         <article class="work reveal">
           <figure class="frame"><span class="fig">03</span><span class="cap label">Interior photography</span></figure>
-          <div class="work-meta"><span class="cat label">Brand Identity · 2024</span><span class="idx">03</span></div>
-          <h3>Hôtel Verão</h3>
-          <p>Naming, voice and guest rituals for a coastal hotel group opening three properties.</p>
+          <div class="work-meta"><span class="cat label">BRAND IDENTITY · [2025-2026]</span><span class="idx">03</span></div>
+          <h3>Grow Her & Wildloomcollective</h3>
+          <p>Full brand build - identity, positioning, website and copy for a founder-led business.</p>
         </article>
 
         <article class="work reveal">
           <figure class="frame"><span class="fig">04</span><span class="cap label">Lookbook spread</span></figure>
-          <div class="work-meta"><span class="cat label">Creative Direction · 2023</span><span class="idx">04</span></div>
-          <h3>Atelier Sombra</h3>
-          <p>Two seasons of campaign direction, from casting to the print books buyers actually kept.</p>
+          <div class="work-meta"><span class="cat label">BRAND, EVENTS & PR · [2025]</span><span class="idx">04</span></div>
+          <h3>Supah Fan</h3>
+          <p>Brand strategy, PR, content, website creation, and event management.</p>
         </article>
 
-        <article class="work reveal">
-          <figure class="frame"><span class="fig">05</span><span class="cap label">Packaging shot</span></figure>
-          <div class="work-meta"><span class="cat label">Brand Architecture · 2023</span><span class="idx">05</span></div>
-          <h3>Casa Ferrer</h3>
-          <p>Untangled fourteen sub-labels into three tiers, then wrote the rules to keep it that way.</p>
-        </article>
-
-        <article class="work reveal">
-          <figure class="frame"><span class="fig">06</span><span class="cap label">Editorial still</span></figure>
-          <div class="work-meta"><span class="cat label">Go-to-market · 2022</span><span class="idx">06</span></div>
-          <h3>Sève Skincare</h3>
-          <p>A clinical range made desirable: retail story, sampling programme and founder narrative.</p>
-        </article>
       </div>
     </div>
   </section>
+
+    <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">03</span><span class="label">Testimonials</span>
+      </div>
+
+      <div class="testimonials">
+        <article class="testimonial reveal">
+          <figure class="frame"><span class="fig">01</span><span class="cap label">Campaign film still</span></figure>
+          <h3>Cindy Perella</h3>
+          <p>Sara joined Coloplast as a Marketing Assistant and quickly progressed to Marketing Specialist. Her strategic thinking, hands-on execution, and results-driven approach made an impact across campaigns, events, and CRM programs. She's proactive, collaborative, and a joy to work with. The results speak for themselves, so I highly recommend her.</p>
+        </article>
+
+        <article class="testimonial reveal">
+          <figure class="frame"><span class="fig">02</span><span class="cap label">Product still</span></figure>
+          <h3>Maxx</h3>
+          <p>Sara helped develop the brand identity for my events business, Supah Fan. Her expertise in events, social media, content creation, and building a coherent brand message led to doubling our attendees within just one month. Beyond her impressive marketing skills, she's also a genuine pleasure to work with. I'd recommend her to anyone looking for a brand specialist.</p>
+        </article>
+
+        <article class="testimonial reveal">
+          <figure class="frame"><span class="fig">03</span><span class="cap label">Interior photography</span></figure>
+          <h3>Mafalda</h3>
+          <p>Sara was instrumental in shaping WILDLOOM's brand identity, turning a vision into a consistent and engaging presence across social media and our website. She brings incredible energy and creativity to everything she touches, and is a genuine pleasure to collaborate with. I couldn't recommend her more highly.</p>
+        </article>
+
+
+      </div>
+    </div>
+  </section>
+
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
