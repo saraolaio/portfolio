@@ -213,20 +213,62 @@
 
 
    /* ---------- testimonials ---------- */
-  #testimonials{padding-bottom:clamp(3rem,6vw,5rem);}
+  /* ---------- testimonials carousel ---------- */
+#testimonials{padding-bottom:clamp(3rem,6vw,5rem);}
 
-   .testimonials{
-    display:grid;grid-template-columns:repeat(3,1fr);
-    gap:clamp(1.6rem,3vw,3rem) clamp(1.6rem,3vw,2.6rem);
-    margin-top:clamp(3rem,6vw,5rem);
-  }
+.carousel{
+  position:relative;
+  margin-top:clamp(3rem,6vw,5rem);
+}
+.carousel-viewport{
+  overflow:hidden;
+}
+.carousel-track{
+  display:flex;
+  transition:transform .7s cubic-bezier(.22,.7,.2,1);
+}
+.carousel-slide{
+  flex:0 0 100%;
+  min-width:0;
+  display:grid;
+  grid-template-columns:minmax(0,.62fr) minmax(0,1fr);
+  gap:clamp(2rem,4.5vw,4.5rem);
+  align-items:center;
+}
+.carousel-slide .frame{aspect-ratio:4/5;}
+.carousel-copy{max-width:56ch;}
+.carousel-copy h3{font-size:1.7rem;letter-spacing:0;margin-bottom:1.1rem;}
+.carousel-copy p{font-size:1.05rem;line-height:1.75;color:var(--ink-soft);text-align:left;}
 
-  .testimonials .frame{aspect-ratio:199/200;}
-  .testimonials-meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:1.2rem;gap:1rem;}
-  .testimonials-meta .cat{font-size:.66rem;}
-  .testimonials-meta .idx{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);}
-  .testimonials h3{font-size:1.55rem;margin-top:.5rem;letter-spacing:0;}
-  .testimonials p{margin-top:.7rem;font-size:.9rem;line-height:1.6;color:var(--ink-soft);max-width:34ch; text-align: justify;}
+.carousel-controls{
+  display:flex;align-items:center;justify-content:center;gap:clamp(1.4rem,3vw,2.4rem);
+  margin-top:clamp(2rem,4vw,3rem);
+}
+.carousel-btn{
+  width:44px;height:44px;border-radius:50%;
+  border:1px solid var(--line);background:transparent;color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:1.1rem;
+  transition:border-color .3s ease, background .3s ease, transform .3s ease;
+  flex:0 0 auto;
+}
+.carousel-btn:hover{border-color:var(--ink);background:rgba(255,255,255,.06);}
+.carousel-btn:active{transform:scale(.94);}
+
+.carousel-dots{display:flex;align-items:center;gap:.6rem;}
+.carousel-dots .dot{
+  width:8px;height:8px;border-radius:50%;
+  border:1px solid var(--line);background:transparent;padding:0;cursor:pointer;
+  transition:background .3s ease, border-color .3s ease, transform .3s ease;
+}
+.carousel-dots .dot.active{background:var(--ink);border-color:var(--ink);transform:scale(1.25);}
+
+@media (max-width:900px){
+  .carousel-slide{grid-template-columns:1fr;text-align:center;}
+  .carousel-slide .frame{aspect-ratio:4/3;max-width:360px;margin:0 auto;}
+  .carousel-copy{max-width:100%;margin:0 auto;}
+  .carousel-copy p{text-align:left;}
+}
 
   /* ---------- contact ---------- */
   .contact{padding-top:50px;padding-bottom:clamp(3rem,6vw,5rem); background-color: #f3f3f3; color:#6a6664;}
@@ -430,43 +472,57 @@
     </div>
   </section>
 
-    <!-- TESTIMONIALS -->
-  <section id="testimonials">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="sec-num">03</span><span class="label">Testimonials</span>
+  <!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">03</span><span class="label">Testimonials</span>
+    </div>
+
+    <div class="carousel reveal" data-carousel>
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 3">
+            <figure class="frame"><span class="fig">01</span><span class="cap label">Campaign film still</span></figure>
+            <div class="carousel-copy">
+              <h3>Cindy Perella</h3>
+              <p>Sara joined Coloplast as a Marketing Assistant and quickly progressed to Marketing Specialist. Her strategic thinking, hands-on execution, and results-driven approach made an impact across campaigns, events, and CRM programs. She's proactive, collaborative, and a joy to work with. The results speak for themselves, so I highly recommend her.</p>
+            </div>
+          </article>
+
+          <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 2 of 3">
+            <figure class="frame"><span class="fig">02</span><span class="cap label">Product still</span></figure>
+            <div class="carousel-copy">
+              <h3>Maxx</h3>
+              <p>Sara helped develop the brand identity for my events business, Supah Fan. Her expertise in events, social media, content creation, and building a coherent brand message led to doubling our attendees within just one month. Beyond her impressive marketing skills, she's also a genuine pleasure to work with. I'd recommend her to anyone looking for a brand specialist.</p>
+            </div>
+          </article>
+
+          <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 3 of 3">
+            <figure class="frame"><span class="fig">03</span><span class="cap label">Interior photography</span></figure>
+            <div class="carousel-copy">
+              <h3>Mafalda</h3>
+              <p>Sara was instrumental in shaping WILDLOOM's brand identity, turning a vision into a consistent and engaging presence across social media and our website. She brings incredible energy and creativity to everything she touches, and is a genuine pleasure to collaborate with. I couldn't recommend her more highly.</p>
+            </div>
+          </article>
+        </div>
       </div>
 
-      <div class="testimonials">
-        <article class="testimonial reveal">
-          <figure class="frame"><span class="fig">01</span><span class="cap label">Campaign film still</span></figure>
-          <h3>Cindy Perella</h3>
-          <p>Sara joined Coloplast as a Marketing Assistant and quickly progressed to Marketing Specialist. Her strategic thinking, hands-on execution, and results-driven approach made an impact across campaigns, events, and CRM programs. She's proactive, collaborative, and a joy to work with. The results speak for themselves, so I highly recommend her.</p>
-        </article>
-
-        <article class="testimonial reveal">
-          <figure class="frame"><span class="fig">02</span><span class="cap label">Product still</span></figure>
-          <h3>Maxx</h3>
-          <p>Sara helped develop the brand identity for my events business, Supah Fan. Her expertise in events, social media, content creation, and building a coherent brand message led to doubling our attendees within just one month. Beyond her impressive marketing skills, she's also a genuine pleasure to work with. I'd recommend her to anyone looking for a brand specialist.</p>
-        </article>
-
-        <article class="testimonial reveal">
-          <figure class="frame"><span class="fig">03</span><span class="cap label">Interior photography</span></figure>
-          <h3>Mafalda</h3>
-          <p>Sara was instrumental in shaping WILDLOOM's brand identity, turning a vision into a consistent and engaging presence across social media and our website. She brings incredible energy and creativity to everything she touches, and is a genuine pleasure to collaborate with. I couldn't recommend her more highly.</p>
-        </article>
-
-
+      <div class="carousel-controls">
+        <button type="button" class="carousel-btn prev" aria-label="Previous testimonial">&#8592;</button>
+        <div class="carousel-dots" role="tablist" aria-label="Select testimonial"></div>
+        <button type="button" class="carousel-btn next" aria-label="Next testimonial">&#8594;</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
   <!-- CONTACT -->
   <section id="contact" class="contact">
     <div class="wrap">
       <div class="sec-head reveal" style="padding-top:0;">
-        <span class="sec-num">03</span><span class="label">Contact</span>
+        <span class="sec-num">04</span><span class="label">Contact</span>
       </div>
       <h2 class="contact-title reveal" style="margin-top:1.6rem;">Let's talk about your next <em>chapter.</em></h2>
       <p class="avail reveal">Available for brand strategy retainers, launch consulting and creative direction from September 2026.</p>
@@ -512,6 +568,75 @@
     }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
     items.forEach(function(el){ io.observe(el); });
   })();
+
+
+  (function(){
+  var root = document.querySelector('[data-carousel]');
+  if (!root) return;
+
+  var track = root.querySelector('.carousel-track');
+  var slides = Array.prototype.slice.call(root.querySelectorAll('.carousel-slide'));
+  var dotsWrap = root.querySelector('.carousel-dots');
+  var prevBtn = root.querySelector('.carousel-btn.prev');
+  var nextBtn = root.querySelector('.carousel-btn.next');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var index = 0;
+  var timer = null;
+  var AUTOPLAY_MS = 6000;
+
+  slides.forEach(function(_, i){
+    var dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('role', 'tab');
+    dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+    dot.addEventListener('click', function(){ goTo(i); restart(); });
+    dotsWrap.appendChild(dot);
+  });
+  var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.dot'));
+
+  function render(){
+    track.style.transform = 'translateX(' + (-index * 100) + '%)';
+    dots.forEach(function(d, i){ d.classList.toggle('active', i === index); });
+  }
+
+  function goTo(i){
+    index = (i + slides.length) % slides.length;
+    render();
+  }
+
+  function next(){ goTo(index + 1); }
+  function prev(){ goTo(index - 1); }
+
+  function start(){
+    if (reduce) return;
+    stop();
+    timer = setInterval(next, AUTOPLAY_MS);
+  }
+  function stop(){
+    if (timer){ clearInterval(timer); timer = null; }
+  }
+  function restart(){ start(); }
+
+  nextBtn.addEventListener('click', function(){ next(); restart(); });
+  prevBtn.addEventListener('click', function(){ prev(); restart(); });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+
+  var touchStartX = null;
+  track.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', function(e){
+    if (touchStartX === null) return;
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 40){ dx < 0 ? next() : prev(); restart(); }
+    touchStartX = null;
+  }, {passive:true});
+
+  render();
+  start();
+})();
 </script>
 </body>
 </html>
