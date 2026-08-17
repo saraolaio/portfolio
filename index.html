@@ -1,357 +1,820 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sara Olaio — Brand Manager · Portfolio 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper:#540018;
-    --paper-deep:#E7E1D4;
-    --ink:#FFFFFF;
-    --ink-soft:#e2d3d6;
-    --line:#C7BFAF;
-    --line-soft:#D8D1C2;
-    --wine:#6A2E3A;
-    --pad: clamp(1.25rem, 5vw, 5rem);
-    --maxw: 1360px;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sara Olaio — Brand Manager · Portfolio 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #540018;
+      --paper-deep: #E7E1D4;
+      --ink: #FFFFFF;
+      --ink-soft: #e2d3d6;
+      --line: #C7BFAF;
+      --line-soft: #D8D1C2;
+      --wine: #6A2E3A;
+      --pad: clamp(1.25rem, 5vw, 5rem);
+      --maxw: 1360px;
+    }
 
-  #about{
-    background-color: #f3f3f3;
-    color: #111010
-  }
-  #about .label{ color: #484645; }
+    #about {
+      background-color: #f3f3f3;
+      color: #111010
+    }
 
-  #work {
-    background-color: #100f0f;
-    color: #111010;
-    padding-bottom: 50px;
-  }
-  #work .label{ color: #949393; }
-  #work h2, #work h3{ color: #ffffff; }
+    #about .label {
+      color: #484645;
+    }
 
-  *{box-sizing:border-box;margin:0;padding:0;}
+    #work {
+      background-color: #100f0f;
+      color: #111010;
+      padding-bottom: 50px;
+    }
 
-  html{scroll-behavior:smooth;}
+    #work .label {
+      color: #949393;
+    }
 
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Jost',sans-serif;
-    font-weight:300;
-    line-height:1.5;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
+    #work h2,
+    #work h3 {
+      color: #ffffff;
+    }
 
-  /* subtle paper grain */
-  body::before{
-    content:"";
-    position:fixed;inset:0;
-    pointer-events:none;
-    z-index:1;
-    opacity:.035;
-    background-image:radial-gradient(var(--ink) .5px, transparent .5px);
-    background-size:3px 3px;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  .wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* ---------- shared type ---------- */
-  .label{
-    font-family:'Jost',sans-serif;
-    font-weight:400;
-    font-size:.7rem;
-    letter-spacing:.32em;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-  }
-  .serif{font-family:'Cormorant Garamond',serif;}
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.02;letter-spacing:-.01em;}
+    /* subtle paper grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: .035;
+      background-image: radial-gradient(var(--ink) .5px, transparent .5px);
+      background-size: 3px 3px;
+    }
 
-  a{color:inherit;text-decoration:none;}
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding-left: var(--pad);
+      padding-right: var(--pad);
+    }
 
-  /* ---------- top bar ---------- */
-  .topbar{
-    position:relative;z-index:3;
-    display:flex;justify-content:space-between;align-items:baseline;
-    gap:1rem;flex-wrap:wrap;
-    padding-top:clamp(1.5rem,3vw,2.4rem);
-    padding-bottom:clamp(1.5rem,3vw,2.4rem);
-    border-bottom: 1px solid #7b3d4b;
-  }
-  .brandmark{
-    font-family:'Jost',sans-serif;font-weight:400;
-    font-size:.82rem;letter-spacing:.5em;text-transform:uppercase;
-  }
-  .topbar .meta{display:flex;gap:clamp(1rem,3vw,2.6rem);}
+    /* ---------- shared type ---------- */
+    .label {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: .7rem;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: #6a6664;
+    }
 
-  /* ---------- hero ---------- */
-  .hero{position:relative;z-index:2;padding-bottom:clamp(3rem,7vw,6rem);}
-  .hero-grid{
-    display:grid;
-    grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
-    gap:clamp(2rem,5vw,4.5rem);
-    align-items:end;
-  }
-  .hero-lead .kicker{margin-bottom:clamp(1.5rem,4vw,2.6rem); padding: 30px 0px 0px; display: block;}
-  h1.hero-title{
-    font-size:clamp(3rem,8.2vw,7.4rem);
-    letter-spacing:-.02em;
-  }
-  h1.hero-title em{font-style:italic;font-weight:400;}
-  .hero-intro{
-    max-width:34ch;
-    margin-top:clamp(1.6rem,3vw,2.4rem);
-    font-size:clamp(1rem,1.35vw,1.18rem);
-    line-height:1.62;
-    color:var(--ink-soft);
-  }
+    .serif {
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-  /* ---------- editorial image frame (signature) ---------- */
-  .frame{
-    position:relative;
-    background:var(--paper-deep);
-    border:1px solid var(--line);
-    aspect-ratio:3/4;
-    display:flex;align-items:center;justify-content:center;
-    overflow:hidden;
-    transition:border-color .5s ease, transform .5s ease;
-  }
-  .frame::before{ /* inner rule */
-    content:"";position:absolute;inset:11px;border:1px solid var(--line-soft);
-    transition:inset .5s ease;
-  }
-  .frame::after{ /* faint diagonal weave to read as an image slot */
-    content:"";position:absolute;inset:0;opacity:.5;
-    background:repeating-linear-gradient(135deg, transparent 0 22px, rgba(26,23,18,.028) 22px 23px);
-  }
-  .frame .fig{
-    position:absolute;top:14px;right:16px;z-index:2;
-    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.95rem;color:var(--wine);
-  }
-  .frame .cap{
-    position:relative;z-index:2;
-    text-align:center;padding:0 1.5rem;max-width:16ch;
-    line-height:1.9;
-  }
-  .frame:hover{border-color:var(--ink);transform:translateY(-4px);}
-  .frame:hover::before{inset:8px;}
+    h1,
+    h2,
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: -.01em;
+    }
 
-  .hero-media .frame{aspect-ratio:4/5;}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  /* ---------- section scaffolding ---------- */
-  section{position:relative;z-index:2;}
-  .rule{height:1px;background:var(--line);margin:0;}
-  .sec-head{
-    display:flex;align-items:baseline;gap:1.2rem;
-    padding-top:clamp(4rem,8vw,7rem);
-  }
-  .sec-num{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);font-size:1rem;}
+    /* ---------- top bar ---------- */
+    .topbar {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: clamp(1.5rem, 3vw, 2.4rem);
+      padding-bottom: clamp(1.5rem, 3vw, 2.4rem);
+      border-bottom: 1px solid #7b3d4b;
+    }
 
-  /* ---------- about ---------- */
-  .about-copy{
-    display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
-    gap:clamp(2rem,5vw,5rem);
-    padding-top:clamp(2.4rem,5vw,4rem);
-    align-items:start;
-  }
-  h2.about-title{font-size:clamp(2.2rem,4.6vw,4rem);}
-  h2.about-title em{font-style:italic;}
-  .about-media {grid-column: 1}
-  .about-body{gap:1.4rem;max-width:56ch; grid-column: 2}
-  .about-body p{color:#6a6664;font-size:1.02rem;line-height:1.68; margin-bottom: 10px;}
+    .brandmark {
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      font-size: .82rem;
+      letter-spacing: .5em;
+      text-transform: uppercase;
+    }
 
-  .stats{
-    display:grid;grid-template-columns:repeat(3,1fr);
-    gap:1rem;
-    margin-top:clamp(3.5rem,7vw,6rem);
-    border-top:1px solid var(--line);
-  }
-  .stat{padding-top:clamp(1.4rem,2.5vw,2rem);}
-  .stat .n{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6.5vw,5.2rem);line-height:.9;}
-  .stat .t{margin-top:.9rem;}
+    .topbar .meta {
+      display: flex;
+      gap: clamp(1rem, 3vw, 2.6rem);
+    }
 
-  .services{
-    display:grid;grid-template-columns:repeat(4,1fr);
-    margin-top:clamp(4rem,8vw,7rem);
-    border-top:1px solid var(--line);
-  }
-  .svc{padding:clamp(1.6rem,2.6vw,2.2rem) clamp(1.1rem,1.6vw,1.6rem) clamp(2rem,3vw,2.6rem) 0;}
-  .svc + .svc{padding-left:clamp(1.1rem,1.6vw,1.6rem);border-left:1px solid var(--line-soft);}
-  .svc h3{margin:.9rem 0 1rem;letter-spacing:0; font-weight: bold;}
-  .svc p{font-size:.92rem;line-height:1.62;color:#6a6664;max-width:26ch;}
-  .svc .idx{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);font-size:.9rem;}
+    /* ---------- hero ---------- */
+    .hero {
+      position: relative;
+      z-index: 2;
+      padding-bottom: clamp(3rem, 7vw, 6rem);
+    }
 
-  /* ---------- portfolio ---------- */
- 
-  .work-intro{
-    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    gap:2rem;align-items:end;
-    padding-top:clamp(2.4rem,5vw,4rem);
-  }
-  h2.work-title{font-size:clamp(2.6rem,7vw,5.6rem);}
-  .work-intro p{max-width:38ch;color:var(--ink-soft);font-size:1.05rem;line-height:1.6;justify-self:end;}
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      gap: clamp(2rem, 5vw, 4.5rem);
+      align-items: end;
+    }
 
-  .works{
-    display:grid;grid-template-columns:repeat(2,1fr);
-    gap:clamp(1.6rem,2vw,3rem) clamp(1.6rem,2vw,2.6rem);
-    margin-top:clamp(3rem,4vw,5rem);
-  }
-  .work .frame{aspect-ratio:199/200;}
-  .work-meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:1.2rem;gap:1rem;}
-  .work-meta .cat{font-size:.66rem;}
-  .work-meta .idx{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--wine);}
-  .work h3{font-size:1.55rem;margin-top:.5rem;letter-spacing:0;}
-  .work p{margin-top:.7rem;font-size:.9rem;line-height:1.6;color:var(--ink-soft);max-width:34ch;}
+    .hero-lead .kicker {
+      margin-bottom: clamp(1.5rem, 4vw, 2.6rem);
+      padding: 30px 0px 0px;
+      display: block;
+    }
+
+    h1.hero-title {
+      font-size: clamp(3rem, 8.2vw, 7.4rem);
+      letter-spacing: -.02em;
+    }
+
+    h1.hero-title em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-intro {
+      max-width: 34ch;
+      margin-top: clamp(1.6rem, 3vw, 2.4rem);
+      font-size: clamp(1rem, 1.35vw, 1.18rem);
+      line-height: 1.62;
+      color: var(--ink-soft);
+    }
+
+    /* ---------- editorial image frame (signature) ---------- */
+    .frame {
+      position: relative;
+      background: var(--paper-deep);
+      border: 1px solid var(--line);
+      aspect-ratio: 3/4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: border-color .5s ease, transform .5s ease;
+    }
+
+    .frame::before {
+      /* inner rule */
+      content: "";
+      position: absolute;
+      inset: 11px;
+      border: 1px solid var(--line-soft);
+      transition: inset .5s ease;
+    }
+
+    .frame::after {
+      /* faint diagonal weave to read as an image slot */
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .5;
+      background: repeating-linear-gradient(135deg, transparent 0 22px, rgba(26, 23, 18, .028) 22px 23px);
+    }
+
+    .frame .fig {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      z-index: 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: .95rem;
+      color: var(--wine);
+    }
+
+    .frame .cap {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 1.5rem;
+      max-width: 16ch;
+      line-height: 1.9;
+    }
+
+    .frame:hover {
+      border-color: var(--ink);
+      transform: translateY(-4px);
+    }
+
+    .frame:hover::before {
+      inset: 8px;
+    }
+
+    .hero-media .frame {
+      aspect-ratio: 4/5;
+    }
+
+    /* ---------- section scaffolding ---------- */
+    section {
+      position: relative;
+      z-index: 2;
+    }
+
+    .rule {
+      height: 1px;
+      background: var(--line);
+      margin: 0;
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      padding-top: clamp(4rem, 3vw, 7rem);
+    }
+
+    .sec-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--wine);
+      font-size: 1rem;
+    }
+
+    /* ---------- about ---------- */
+    .about-copy {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      padding-top: clamp(2.4rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    h2.about-title {
+      font-size: clamp(2.2rem, 4.6vw, 4rem);
+    }
+
+    h2.about-title em {
+      font-style: italic;
+    }
+
+    .about-media {
+      grid-column: 1
+    }
+
+    .about-body {
+      gap: 1.4rem;
+      max-width: 56ch;
+      grid-column: 2
+    }
+
+    .about-body p {
+      color: #6a6664;
+      font-size: 1.02rem;
+      line-height: 1.68;
+      margin-bottom: 10px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: clamp(3.5rem, 7vw, 6rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .stat {
+      padding-top: clamp(1.4rem, 2.5vw, 2rem);
+    }
+
+    .stat .n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6.5vw, 5.2rem);
+      line-height: .9;
+    }
+
+    .stat .t {
+      margin-top: .9rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: clamp(4rem, 8vw, 7rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .svc {
+      padding: clamp(1.6rem, 2.6vw, 2.2rem) clamp(1.1rem, 1.6vw, 1.6rem) clamp(2rem, 3vw, 2.6rem) 0;
+    }
+
+    .svc+.svc {
+      padding-left: clamp(1.1rem, 1.6vw, 1.6rem);
+      border-left: 1px solid var(--line-soft);
+    }
+
+    .svc h3 {
+      margin: .9rem 0 1rem;
+      letter-spacing: 0;
+      font-weight: bold;
+    }
+
+    .svc p {
+      font-size: .92rem;
+      line-height: 1.62;
+      color: #6a6664;
+      max-width: 26ch;
+    }
+
+    .svc .idx {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--wine);
+      font-size: .9rem;
+    }
+
+    /* ---------- portfolio ---------- */
+
+    .work-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: end;
+      padding-top: clamp(2.4rem, 5vw, 4rem);
+    }
+
+    h2.work-title {
+      font-size: clamp(2.6rem, 7vw, 5.6rem);
+    }
+
+    .work-intro p {
+      max-width: 38ch;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      justify-self: end;
+    }
+
+    .works {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.6rem, 2vw, 3rem) clamp(1.6rem, 2vw, 2.6rem);
+      margin-top: clamp(3rem, 4vw, 5rem);
+    }
+
+    .work .frame {
+      aspect-ratio: 1.2;
+    }
+
+    .work-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 1.2rem;
+      gap: 1rem;
+    }
+
+    .work-meta .cat {
+      font-size: .66rem;
+    }
+
+    .work-meta .idx {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--wine);
+    }
+
+    .work h3 {
+      font-size: 1.55rem;
+      margin-top: .5rem;
+      letter-spacing: 0;
+    }
+
+    .work p {
+      margin-top: .7rem;
+      font-size: .9rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+    }
 
 
-   /* ---------- testimonials ---------- */
-  /* ---------- testimonials carousel ---------- */
-#testimonials{padding-bottom:clamp(3rem,6vw,5rem);}
+    /* ---------- testimonials ---------- */
+    /* ---------- testimonials carousel ---------- */
+    #testimonials {
+      padding-bottom: clamp(3rem, 6vw, 5rem);
+    }
 
-.carousel{
-  position:relative;
-  margin-top:clamp(3rem,6vw,5rem);
-}
-.carousel-viewport{
-  overflow:hidden;
-}
-.carousel-track{
-  display:flex;
-  transition:transform .7s cubic-bezier(.22,.7,.2,1);
-}
-.carousel-slide{
-  flex:0 0 100%;
-  min-width:0;
-  display:grid;
-  grid-template-columns:minmax(0,.62fr) minmax(0,1fr);
-  gap:clamp(2rem,4.5vw,4.5rem);
-  align-items:center;
-}
-.carousel-slide .frame{aspect-ratio:4/5;}
-.carousel-copy{max-width:56ch;}
-.carousel-copy h3{font-size:1.7rem;letter-spacing:0;margin-bottom:1.1rem;}
-.carousel-copy p{font-size:1.05rem;line-height:1.75;color:var(--ink-soft);text-align:left;}
+    .carousel {
+      position: relative;
+      margin-top: clamp(3rem, 6vw, 5rem);
+    }
 
-.carousel-controls{
-  display:flex;align-items:center;justify-content:center;gap:clamp(1.4rem,3vw,2.4rem);
-  margin-top:clamp(2rem,4vw,3rem);
-}
-.carousel-btn{
-  width:44px;height:44px;border-radius:50%;
-  border:1px solid var(--line);background:transparent;color:var(--ink);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:1.1rem;
-  transition:border-color .3s ease, background .3s ease, transform .3s ease;
-  flex:0 0 auto;
-}
-.carousel-btn:hover{border-color:var(--ink);background:rgba(255,255,255,.06);}
-.carousel-btn:active{transform:scale(.94);}
+    .carousel-viewport {
+      overflow: hidden;
+    }
 
-.carousel-dots{display:flex;align-items:center;gap:.6rem;}
-.carousel-dots .dot{
-  width:8px;height:8px;border-radius:50%;
-  border:1px solid var(--line);background:transparent;padding:0;cursor:pointer;
-  transition:background .3s ease, border-color .3s ease, transform .3s ease;
-}
-.carousel-dots .dot.active{background:var(--ink);border-color:var(--ink);transform:scale(1.25);}
+    .carousel-track {
+      display: flex;
+      transition: transform .7s cubic-bezier(.22, .7, .2, 1);
+    }
 
-@media (max-width:900px){
-  .carousel-slide{grid-template-columns:1fr;text-align:center;}
-  .carousel-slide .frame{aspect-ratio:4/3;max-width:360px;margin:0 auto;}
-  .carousel-copy{max-width:100%;margin:0 auto;}
-  .carousel-copy p{text-align:left;}
-}
+    .carousel-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: minmax(0, .62fr) minmax(0, 1fr);
+      gap: clamp(2rem, 4.5vw, 4.5rem);
+      align-items: center;
+    }
 
-  /* ---------- contact ---------- */
-  .contact{padding-top:50px;padding-bottom:clamp(3rem,6vw,5rem); background-color: #f3f3f3; color:#6a6664;}
-  h2.contact-title{font-size:clamp(2.6rem,7.5vw,6.4rem);max-width:14ch;}
-  h2.contact-title em{font-style:italic;}
-  .avail{max-width:40ch;margin-top:2rem;color:var(--ink-soft);font-size:1.05rem;line-height:1.6; color:#6a6664;}
-  .email-line{margin-top:clamp(2.5rem,5vw,4rem);}
-  a.big-email{
-    font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,5vw,3.4rem);
-    display:inline-block;position:relative;padding-bottom:.12em;
-  }
-  a.big-email::after{
-    content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
-    background:var(--ink);transform:scaleX(0);transform-origin:left;
-    transition:transform .5s cubic-bezier(.2,.7,.2,1);
-  }
-  a.big-email:hover{color:var(--wine);}
-  a.big-email:hover::after{transform:scaleX(1);background:var(--wine);}
+    .carousel-slide .frame {
+      aspect-ratio: 1.2;
+    }
 
-  .contact-foot{
-    display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;
-    margin-top:clamp(3rem,6vw,5rem);
-    padding-top:clamp(1.6rem,3vw,2.2rem);
-    border-top:1px solid var(--line);
-  }
-  .socials{display:flex;flex-wrap:wrap;gap:clamp(1.4rem,3vw,3rem);}
-  .socials a{display:grid;gap:.4rem;}
-  .socials a .h{font-family:'Cormorant Garamond',serif;font-size:1.1rem;transition:color .3s;}
-  .socials a:hover .h{color:var(--wine);}
-  .phone .h{font-family:'Cormorant Garamond',serif;font-size:1.1rem;}
+    .carousel-copy {
+      max-width: 56ch;
+    }
 
-  footer{
-    padding-top:clamp(2rem,4vw,3rem);padding-bottom:clamp(2rem,4vw,3rem);
-  }
-  .colophon{font-size:.66rem;letter-spacing:.28em;}
+    .carousel-copy h3 {
+      font-size: 1.7rem;
+      letter-spacing: 0;
+      margin-bottom: 1.1rem;
+    }
 
-  /* ---------- reveal animation ---------- */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1);}
-  .reveal.in{opacity:1;transform:none;}
-  .hero-title .ln{display:block;opacity:0;transform:translateY(28px);animation:rise 1.1s cubic-bezier(.2,.7,.2,1) forwards;}
-  .hero-title .ln:nth-child(1){animation-delay:.12s;}
-  .hero-title .ln:nth-child(2){animation-delay:.26s;}
-  .hero-title .ln:nth-child(3){animation-delay:.40s;}
-  @keyframes rise{to{opacity:1;transform:none;}}
+    .carousel-copy p {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: var(--ink-soft);
+      text-align: left;
+      font-style: italic;
+    }
 
-  /* ---------- responsive ---------- */
-  @media (min-width:900px){
-   h2.about-title{max-width:12ch; }
-  }
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1.4rem, 3vw, 2.4rem);
+      margin-top: clamp(2rem, 4vw, 3rem);
+    }
 
-  @media (max-width:900px){
-    .hero-grid{grid-template-columns:1fr;align-items:start;}
-    .hero-media{order:1;max-width:100%;}
-    .hero-intro{max-width:100%;}
-    .about-media{max-width:300px;}
-    .services{grid-template-columns:1fr 1fr;}
-    .svc,.svc + .svc{border-left:none;border-top:1px solid var(--line-soft);padding-left:0;padding-top:1.6rem;}
-    .services{border-top:1px solid var(--line);}
-    .works{grid-template-columns:1fr 1fr;}
-    .work-intro{grid-template-columns:1fr;}
-    .work-intro p{justify-self:start;}
-  }
-  @media (max-width:700px){
-    .hero-media{order:1;max-width:100%;}
-  }
-  @media (max-width:560px){
-    .stats{grid-template-columns:1fr;}
-    .stat{border-top:1px solid var(--line-soft);}
-    .services{grid-template-columns:1fr;}
-    .works{grid-template-columns:1fr;}
-    .topbar .meta{justify-content:space-between;}
-  }
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: border-color .3s ease, background .3s ease, transform .3s ease;
+      flex: 0 0 auto;
+    }
 
-  @media (prefers-reduced-motion:reduce){
-    *{scroll-behavior:auto;}
-    .reveal{opacity:1;transform:none;transition:none;}
-    .hero-title .ln{opacity:1;transform:none;animation:none;}
-    .frame,.big-email::after{transition:none;}
-  }
+    .carousel-btn:hover {
+      border-color: var(--ink);
+      background: rgba(255, 255, 255, .06);
+    }
 
-  :focus-visible{outline:2px solid var(--wine);outline-offset:3px;}
-</style>
+    .carousel-btn:active {
+      transform: scale(.94);
+    }
+
+    .carousel-dots {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .carousel-dots .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      transition: background .3s ease, border-color .3s ease, transform .3s ease;
+    }
+
+    .carousel-dots .dot.active {
+      background: var(--ink);
+      border-color: var(--ink);
+      transform: scale(1.25);
+    }
+
+    @media (max-width:900px) {
+      .carousel-slide {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .carousel-slide .frame {
+        aspect-ratio: 4/3;
+        max-width: 360px;
+        margin: 0 auto;
+      }
+
+      .carousel-copy {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .carousel-copy p {
+        text-align: left;
+      }
+    }
+
+    /* ---------- contact ---------- */
+    .contact {
+      padding-top: 50px;
+      padding-bottom: clamp(3rem, 6vw, 5rem);
+      background-color: #f3f3f3;
+      color: #6a6664;
+    }
+
+    h2.contact-title {
+      font-size: clamp(2.6rem, 7.5vw, 6.4rem);
+      max-width: 14ch;
+    }
+
+    h2.contact-title em {
+      font-style: italic;
+    }
+
+    .avail {
+      max-width: 40ch;
+      margin-top: 2rem;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #6a6664;
+    }
+
+    .email-line {
+      margin-top: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    a.big-email {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 5vw, 3.4rem);
+      display: inline-block;
+      position: relative;
+      padding-bottom: .12em;
+    }
+
+    a.big-email::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background: var(--ink);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .5s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    a.big-email:hover {
+      color: var(--wine);
+    }
+
+    a.big-email:hover::after {
+      transform: scaleX(1);
+      background: var(--wine);
+    }
+
+    .contact-foot {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: clamp(3rem, 6vw, 5rem);
+      padding-top: clamp(1.6rem, 3vw, 2.2rem);
+      border-top: 1px solid var(--line);
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(1.4rem, 3vw, 3rem);
+    }
+
+    .socials a {
+      display: grid;
+      gap: .4rem;
+    }
+
+    .socials a .h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      transition: color .3s;
+    }
+
+    .socials a:hover .h {
+      color: var(--wine);
+    }
+
+    .phone .h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      padding-top: clamp(2rem, 4vw, 3rem);
+      padding-bottom: clamp(2rem, 4vw, 3rem);
+    }
+
+    .colophon {
+      font-size: .66rem;
+      letter-spacing: .28em;
+    }
+
+    /* ---------- reveal animation ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 1s ease, transform 1s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .hero-title .ln {
+      display: block;
+      opacity: 0;
+      transform: translateY(28px);
+      animation: rise 1.1s cubic-bezier(.2, .7, .2, 1) forwards;
+    }
+
+    .hero-title .ln:nth-child(1) {
+      animation-delay: .12s;
+    }
+
+    .hero-title .ln:nth-child(2) {
+      animation-delay: .26s;
+    }
+
+    .hero-title .ln:nth-child(3) {
+      animation-delay: .40s;
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ---------- responsive ---------- */
+    @media (min-width:900px) {
+      h2.about-title {
+        max-width: 12ch;
+      }
+    }
+
+    @media (max-width:900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .hero-media {
+        order: 1;
+        max-width: 100%;
+      }
+
+      .hero-intro {
+        max-width: 100%;
+      }
+
+      .about-media {
+        max-width: 300px;
+      }
+
+      .services {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .svc,
+      .svc+.svc {
+        border-left: none;
+        border-top: 1px solid var(--line-soft);
+        padding-left: 0;
+        padding-top: 1.6rem;
+      }
+
+      .services {
+        border-top: 1px solid var(--line);
+      }
+
+      .works {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .work-intro {
+        grid-template-columns: 1fr;
+      }
+
+      .work-intro p {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width:700px) {
+      .hero-media {
+        order: 1;
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width:560px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-top: 1px solid var(--line-soft);
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .works {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar .meta {
+        justify-content: space-between;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      * {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .hero-title .ln {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
+      .frame,
+      .big-email::after {
+        transition: none;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--wine);
+      outline-offset: 3px;
+    }
+  </style>
 </head>
+
 <body>
 
   <div class="wrap">
@@ -368,13 +831,15 @@
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-lead">
-        <span class="label kicker">Brand Manager · English, Spanish & Portuguese</span>
+          <span class="label kicker">Brand Manager · English, Spanish & Portuguese</span>
           <h1 class="hero-title">
             <span class="ln">I make</span>
             <span class="ln">your brand</span>
             <span class="ln">feel like <em>luxury.</em></span>
           </h1>
-          <p class="hero-intro">I'm Sara, a Brand Manager shaping positioning, campaigns, and creative direction across beauty, fashion, healthcare and entertainment. With 9+ years of developing a deep understanding of people's needs and desires.</p>
+          <p class="hero-intro">I'm Sara, a Brand Manager shaping positioning, campaigns, and creative direction across
+            beauty, fashion, healthcare and entertainment. With 9+ years of developing a deep understanding of people's
+            needs and desires.</p>
         </div>
         <div class="hero-media reveal">
           <figure class="frame">
@@ -402,28 +867,59 @@
             </figure>
           </div>
           <div class="about-body">
-            <p>My path into brand began in nursing, a background that taught me to understand people, build trust, and make decisions grounded in evidence. Curiosity drives how I work, adapting quickly, challenging conventions, and taking calculated risks when they create a stronger brand.</p>
-            <p>Over the past decade I've worked across healthcare, MedTech, fashion, luxury, entertainment, and founder-led businesses, turning brand strategy into experiences that perform and hold their audience.</p>
-            <p>My work spans the full brand cycle: strategy and identity, product positioning and launch, campaign development and copy, public relations and events, styling and creative direction. I operate closely with cross-functional teams and agencies, aligning specialists around a single objective and keeping execution consistent from concept to delivery.</p>
-            <p>As a results-driven professional, my focus relies on sales and performance while protecting the thing that makes a brand worth choosing in the first place: <b>its authenticity</b>.</p>
+            <p>My path into brand began in nursing, a background that taught me to understand people, build trust, and
+              make decisions grounded in evidence. Curiosity drives how I work, adapting quickly, challenging
+              conventions, and taking calculated risks when they create a stronger brand.</p>
+            <p>Over the past decade I've worked across healthcare, MedTech, fashion, luxury, entertainment, and
+              founder-led businesses, turning brand strategy into experiences that perform and hold their audience.</p>
+            <p>My work spans the full brand cycle: strategy and identity, product positioning and launch, campaign
+              development and copy, public relations and events, styling and creative direction. I operate closely with
+              cross-functional teams and agencies, aligning specialists around a single objective and keeping execution
+              consistent from concept to delivery.</p>
+            <p>As a results-driven professional, my focus relies on sales and performance while protecting the thing
+              that makes a brand worth choosing in the first place: <b>its authenticity</b>.</p>
             <p>Experienced across international markets. Fluent in English, Spanish, and Portuguese.</p>
-            
+
             <p>Certified in Brand Management by University of London x London Business School.</p>
           </div>
         </div>
       </div>
 
       <div class="stats reveal">
-        <div class="stat"><div class="n">8</div><div class="t label">Years in brand</div></div>
-        <div class="stat"><div class="n">24</div><div class="t label">Launches led</div></div>
-        <div class="stat"><div class="n">11</div><div class="t label">Markets</div></div>
+        <div class="stat">
+          <div class="n">8</div>
+          <div class="t label">Years in brand</div>
+        </div>
+        <div class="stat">
+          <div class="n">24</div>
+          <div class="t label">Launches led</div>
+        </div>
+        <div class="stat">
+          <div class="n">11</div>
+          <div class="t label">Markets</div>
+        </div>
       </div>
 
       <div class="services reveal">
-        <div class="svc"><span class="idx">i</span><h3>Strategy & Identity</h3><p>Positioning, brand architecture and the strategic foundation beneath it, built to stay coherent from the first choice to the last touchpoint.</p></div>
-        <div class="svc"><span class="idx">ii</span><h3>Public Relations & Events</h3><p>Launches, press moments and events made to be felt in the room, turning an audience into a following that returns.</p></div>
-        <div class="svc"><span class="idx">iii</span><h3>Creative Direction</h3><p>Campaign concepts, art direction, casting and styling that give the strategy a face people want to look at.</p></div>
-        <div class="svc"><span class="idx">iv</span><h3>Branding</h3><p>Voice, story and presence that turn founders into authorities and brands into names people trust. </p></div>
+        <div class="svc"><span class="idx">i</span>
+          <h3>Strategy & Identity</h3>
+          <p>Positioning, brand architecture and the strategic foundation beneath it, built to stay coherent from the
+            first choice to the last touchpoint.</p>
+        </div>
+        <div class="svc"><span class="idx">ii</span>
+          <h3>Public Relations & Events</h3>
+          <p>Launches, press moments and events made to be felt in the room, turning an audience into a following that
+            returns.</p>
+        </div>
+        <div class="svc"><span class="idx">iii</span>
+          <h3>Creative Direction</h3>
+          <p>Campaign concepts, art direction, casting and styling that give the strategy a face people want to look at.
+          </p>
+        </div>
+        <div class="svc"><span class="idx">iv</span>
+          <h3>Branding</h3>
+          <p>Voice, story and presence that turn founders into authorities and brands into names people trust. </p>
+        </div>
       </div>
     </div>
   </section>
@@ -436,34 +932,39 @@
       </div>
       <div class="work-intro">
         <h2 class="work-title reveal">Selected work</h2>
-        <p class="reveal">Six engagements, from repositioning a heritage maison to launching a fragrance in eleven markets.</p>
+        <p class="reveal">Six engagements, from repositioning a heritage maison to launching a fragrance in eleven
+          markets.</p>
       </div>
 
       <div class="works">
         <article class="work reveal">
           <figure class="frame"><span class="fig">01</span><span class="cap label">Campaign film still</span></figure>
-          <div class="work-meta"><span class="cat label">BRAND & MARKETING STRATEGY · [2022-2024]</span><span class="idx">01</span></div>
+          <div class="work-meta"><span class="cat label">BRAND & MARKETING STRATEGY · [2022-2024]</span><span
+              class="idx">01</span></div>
           <h3>Coloplast - Ostomy Division</h3>
           <p>Optimised the loyalty programme to a 25% lift in engagement, and raised event satisfaction to +15%.</p>
         </article>
 
         <article class="work reveal">
           <figure class="frame"><span class="fig">02</span><span class="cap label">Product still</span></figure>
-          <div class="work-meta"><span class="cat label">COMMUNITY & CONTENT CREATION · [2026]</span><span class="idx">02</span></div>
+          <div class="work-meta"><span class="cat label">COMMUNITY & CONTENT CREATION · [2026]</span><span
+              class="idx">02</span></div>
           <h3>BadBClub</h3>
           <p>Founded and ran a women-first events community end to end, built from zero into an active following.</p>
         </article>
 
         <article class="work reveal">
           <figure class="frame"><span class="fig">03</span><span class="cap label">Interior photography</span></figure>
-          <div class="work-meta"><span class="cat label">BRAND IDENTITY · [2025-2026]</span><span class="idx">03</span></div>
+          <div class="work-meta"><span class="cat label">BRAND IDENTITY · [2025-2026]</span><span class="idx">03</span>
+          </div>
           <h3>Grow Her & Wildloomcollective</h3>
           <p>Full brand build - identity, positioning, website and copy for a founder-led business.</p>
         </article>
 
         <article class="work reveal">
           <figure class="frame"><span class="fig">04</span><span class="cap label">Lookbook spread</span></figure>
-          <div class="work-meta"><span class="cat label">BRAND, EVENTS & PR · [2025]</span><span class="idx">04</span></div>
+          <div class="work-meta"><span class="cat label">BRAND, EVENTS & PR · [2025]</span><span class="idx">04</span>
+          </div>
           <h3>Supah Fan</h3>
           <p>Brand strategy, PR, content, website creation, and event management.</p>
         </article>
@@ -473,49 +974,60 @@
   </section>
 
   <!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="sec-num">03</span><span class="label">Testimonials</span>
-    </div>
+  <section id="testimonials">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">03</span><span class="label">Testimonials</span>
+      </div>
 
-    <div class="carousel reveal" data-carousel>
-      <div class="carousel-viewport">
-        <div class="carousel-track">
-          <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 3">
-            <figure class="frame"><span class="fig">01</span><span class="cap label">Campaign film still</span></figure>
-            <div class="carousel-copy">
-              <h3>Cindy Perella</h3>
-              <p>Sara joined Coloplast as a Marketing Assistant and quickly progressed to Marketing Specialist. Her strategic thinking, hands-on execution, and results-driven approach made an impact across campaigns, events, and CRM programs. She's proactive, collaborative, and a joy to work with. The results speak for themselves, so I highly recommend her.</p>
-            </div>
-          </article>
+      <div class="carousel reveal" data-carousel>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 3">
+              <figure class="frame"><span class="fig">01</span><span class="cap label">Campaign film still</span>
+              </figure>
+              <div class="carousel-copy">
+                <h3>Cindy Perella</h3>
+                <p>Sara joined Coloplast as a Marketing Assistant and quickly progressed to Marketing Specialist. Her
+                  strategic thinking, hands-on execution, and results-driven approach made an impact across campaigns,
+                  events, and CRM programs. She's proactive, collaborative, and a joy to work with. The results speak
+                  for themselves, so I highly recommend her.</p>
+              </div>
+            </article>
 
-          <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 2 of 3">
-            <figure class="frame"><span class="fig">02</span><span class="cap label">Product still</span></figure>
-            <div class="carousel-copy">
-              <h3>Maxx</h3>
-              <p>Sara helped develop the brand identity for my events business, Supah Fan. Her expertise in events, social media, content creation, and building a coherent brand message led to doubling our attendees within just one month. Beyond her impressive marketing skills, she's also a genuine pleasure to work with. I'd recommend her to anyone looking for a brand specialist.</p>
-            </div>
-          </article>
+            <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 2 of 3">
+              <figure class="frame"><span class="fig">02</span><span class="cap label">Product still</span></figure>
+              <div class="carousel-copy">
+                <h3>Maxx</h3>
+                <p>Sara helped develop the brand identity for my events business, Supah Fan. Her expertise in events,
+                  social media, content creation, and building a coherent brand message led to doubling our attendees
+                  within just one month. Beyond her impressive marketing skills, she's also a genuine pleasure to work
+                  with. I'd recommend her to anyone looking for a brand specialist.</p>
+              </div>
+            </article>
 
-          <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 3 of 3">
-            <figure class="frame"><span class="fig">03</span><span class="cap label">Interior photography</span></figure>
-            <div class="carousel-copy">
-              <h3>Mafalda</h3>
-              <p>Sara was instrumental in shaping WILDLOOM's brand identity, turning a vision into a consistent and engaging presence across social media and our website. She brings incredible energy and creativity to everything she touches, and is a genuine pleasure to collaborate with. I couldn't recommend her more highly.</p>
-            </div>
-          </article>
+            <article class="carousel-slide" role="group" aria-roledescription="slide" aria-label="Testimonial 3 of 3">
+              <figure class="frame"><span class="fig">03</span><span class="cap label">Interior photography</span>
+              </figure>
+              <div class="carousel-copy">
+                <h3>Mafalda</h3>
+                <p>Sara was instrumental in shaping WILDLOOM's brand identity, turning a vision into a consistent and
+                  engaging presence across social media and our website. She brings incredible energy and creativity to
+                  everything she touches, and is a genuine pleasure to collaborate with. I couldn't recommend her more
+                  highly.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button type="button" class="carousel-btn prev" aria-label="Previous testimonial">&#8592;</button>
+          <div class="carousel-dots" role="tablist" aria-label="Select testimonial"></div>
+          <button type="button" class="carousel-btn next" aria-label="Next testimonial">&#8594;</button>
         </div>
       </div>
-
-      <div class="carousel-controls">
-        <button type="button" class="carousel-btn prev" aria-label="Previous testimonial">&#8592;</button>
-        <div class="carousel-dots" role="tablist" aria-label="Select testimonial"></div>
-        <button type="button" class="carousel-btn next" aria-label="Next testimonial">&#8594;</button>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- CONTACT -->
@@ -525,7 +1037,8 @@
         <span class="sec-num">04</span><span class="label">Contact</span>
       </div>
       <h2 class="contact-title reveal" style="margin-top:1.6rem;">Let's talk about your next <em>chapter.</em></h2>
-      <p class="avail reveal">Available for brand strategy retainers, launch consulting and creative direction from September 2026.</p>
+      <p class="avail reveal">Available for brand strategy retainers, launch consulting and creative direction from
+        September 2026.</p>
 
       <div class="email-line reveal">
         <a class="big-email" href="mailto:hello@sara.studio">hello@sara.studio</a>
@@ -538,9 +1051,12 @@
           <div class="label" style="margin-top:.5rem;">English, Spanish & Portuguese — Paris</div>
         </div>
         <div class="socials">
-          <a href="https://instagram.com/saraolaio" target="_blank" rel="noopener"><span class="label">Instagram</span><span class="h">@saraolaio</span></a>
-          <a href="https://linkedin.com/in/saraolaio" target="_blank" rel="noopener"><span class="label">LinkedIn</span><span class="h">in/saraolaio</span></a>
-          <a href="https://sara.studio" target="_blank" rel="noopener"><span class="label">Studio</span><span class="h">sara.studio</span></a>
+          <a href="https://instagram.com/saraolaio" target="_blank" rel="noopener"><span
+              class="label">Instagram</span><span class="h">@saraolaio</span></a>
+          <a href="https://linkedin.com/in/saraolaio" target="_blank" rel="noopener"><span
+              class="label">LinkedIn</span><span class="h">in/saraolaio</span></a>
+          <a href="https://sara.studio" target="_blank" rel="noopener"><span class="label">Studio</span><span
+              class="h">sara.studio</span></a>
         </div>
       </div>
     </div>
@@ -549,94 +1065,96 @@
   <footer>
     <div class="wrap">
       <div class="rule"></div>
-      <div class="colophon label" style="padding-top:1.6rem;">© 2026 Sara Olaio — Brand Management &amp; Creative Direction</div>
+      <div class="colophon label" style="padding-top:1.6rem;">© 2026 Sara Olaio — Brand Management &amp; Creative
+        Direction</div>
     </div>
   </footer>
 
-<script>
-  (function(){
-    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var items = document.querySelectorAll('.reveal');
-    if (reduce || !('IntersectionObserver' in window)) {
-      items.forEach(function(el){ el.classList.add('in'); });
-      return;
-    }
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  <script>
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var items = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+
+
+    (function () {
+      var root = document.querySelector('[data-carousel]');
+      if (!root) return;
+
+      var track = root.querySelector('.carousel-track');
+      var slides = Array.prototype.slice.call(root.querySelectorAll('.carousel-slide'));
+      var dotsWrap = root.querySelector('.carousel-dots');
+      var prevBtn = root.querySelector('.carousel-btn.prev');
+      var nextBtn = root.querySelector('.carousel-btn.next');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var index = 0;
+      var timer = null;
+      var AUTOPLAY_MS = 6000;
+
+      slides.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+        dot.addEventListener('click', function () { goTo(i); restart(); });
+        dotsWrap.appendChild(dot);
       });
-    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
-    items.forEach(function(el){ io.observe(el); });
-  })();
+      var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.dot'));
 
+      function render() {
+        track.style.transform = 'translateX(' + (-index * 100) + '%)';
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === index); });
+      }
 
-  (function(){
-  var root = document.querySelector('[data-carousel]');
-  if (!root) return;
+      function goTo(i) {
+        index = (i + slides.length) % slides.length;
+        render();
+      }
 
-  var track = root.querySelector('.carousel-track');
-  var slides = Array.prototype.slice.call(root.querySelectorAll('.carousel-slide'));
-  var dotsWrap = root.querySelector('.carousel-dots');
-  var prevBtn = root.querySelector('.carousel-btn.prev');
-  var nextBtn = root.querySelector('.carousel-btn.next');
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var index = 0;
-  var timer = null;
-  var AUTOPLAY_MS = 6000;
+      function next() { goTo(index + 1); }
+      function prev() { goTo(index - 1); }
 
-  slides.forEach(function(_, i){
-    var dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('role', 'tab');
-    dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
-    dot.addEventListener('click', function(){ goTo(i); restart(); });
-    dotsWrap.appendChild(dot);
-  });
-  var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.dot'));
+      function start() {
+        if (reduce) return;
+        stop();
+        timer = setInterval(next, AUTOPLAY_MS);
+      }
+      function stop() {
+        if (timer) { clearInterval(timer); timer = null; }
+      }
+      function restart() { start(); }
 
-  function render(){
-    track.style.transform = 'translateX(' + (-index * 100) + '%)';
-    dots.forEach(function(d, i){ d.classList.toggle('active', i === index); });
-  }
+      nextBtn.addEventListener('click', function () { next(); restart(); });
+      prevBtn.addEventListener('click', function () { prev(); restart(); });
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+      root.addEventListener('focusin', stop);
+      root.addEventListener('focusout', start);
 
-  function goTo(i){
-    index = (i + slides.length) % slides.length;
-    render();
-  }
+      var touchStartX = null;
+      track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', function (e) {
+        if (touchStartX === null) return;
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); restart(); }
+        touchStartX = null;
+      }, { passive: true });
 
-  function next(){ goTo(index + 1); }
-  function prev(){ goTo(index - 1); }
-
-  function start(){
-    if (reduce) return;
-    stop();
-    timer = setInterval(next, AUTOPLAY_MS);
-  }
-  function stop(){
-    if (timer){ clearInterval(timer); timer = null; }
-  }
-  function restart(){ start(); }
-
-  nextBtn.addEventListener('click', function(){ next(); restart(); });
-  prevBtn.addEventListener('click', function(){ prev(); restart(); });
-  root.addEventListener('mouseenter', stop);
-  root.addEventListener('mouseleave', start);
-  root.addEventListener('focusin', stop);
-  root.addEventListener('focusout', start);
-
-  var touchStartX = null;
-  track.addEventListener('touchstart', function(e){ touchStartX = e.touches[0].clientX; }, {passive:true});
-  track.addEventListener('touchend', function(e){
-    if (touchStartX === null) return;
-    var dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 40){ dx < 0 ? next() : prev(); restart(); }
-    touchStartX = null;
-  }, {passive:true});
-
-  render();
-  start();
-})();
-</script>
+      render();
+      start();
+    })();
+  </script>
 </body>
+
 </html>
